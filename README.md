@@ -1,5 +1,21 @@
-# Getting Started with Create React App
+# App overview
+Home page
 
+![home page](https://images4.imagebam.com/25/12/98/ME4VVKZ_o.jpg)
+
+Movie details
+
+![movie details](https://images4.imagebam.com/75/ba/b4/ME4VVKY_o.jpg)
+
+Search
+
+![search](https://images4.imagebam.com/f1/87/df/ME4VVL0_o.jpg)
+
+Wishlist
+
+![wishlist](https://images4.imagebam.com/b2/79/5a/ME4VVKX_o.jpg)
+
+# Getting Started with Create Rea
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
