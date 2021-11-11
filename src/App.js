@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HomePage, WishlistPage } from './pages'
+import { NavbarComponent } from './components'
+import Cookies from 'js-cookie'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    if (Cookies.get('wishlist') === undefined) {
+      Cookies.set('wishlist', JSON.stringify([]), {path: '/'})
+    }
+
+    return (
+      <BrowserRouter>
+        <NavbarComponent />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} exact />
+            <Route path="/wishlist" element={<WishlistPage />} exact />
+          </Routes>
+        </main>
+      </BrowserRouter>
+    )
+  }
 }
-
-export default App;
