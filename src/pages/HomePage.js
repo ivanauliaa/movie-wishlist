@@ -67,6 +67,9 @@ export default class Home extends Component {
 
     handleChange() {
         const value = this.textInput.current.value
+        if(value) {
+          console.log(value)
+        }
     }
 
     render() {

@@ -27,14 +27,14 @@ export default class MovieCardComponent extends Component {
         let inWishlist = false
         
         for(let i = 0; i < wishlist.length; i++) {
-            if(wishlist[i].imdbID == movie.imdbid) {
+            if(wishlist[i].imdbID === movie.imdbid) {
                 inWishlist = true
                 break
             }
         }
 
         if (inWishlist) {
-            wishlist = wishlist.filter(wishlistMovie => wishlistMovie.Title != movie.Title)
+            wishlist = wishlist.filter(wishlistMovie => wishlistMovie.Title !== movie.Title)
         } else {
             wishlist.push(movie)
         }

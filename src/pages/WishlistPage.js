@@ -10,13 +10,16 @@ export default class Wishlist extends Component {
         let inWishlist = false
 
         for (let i = 0; i < wishlist.length; i++) {
-            if (wishlist[i].imdbID == movie.imdbid) {
+            if (wishlist[i].imdbID === movie.imdbid) {
                 inWishlist = true
+                if(inWishlist) {
+                  console.log(inWishlist)
+                }
                 break
             }
         }
 
-        wishlist = wishlist.filter(wishlistMovie => wishlistMovie.Title != movie.Title)
+        wishlist = wishlist.filter(wishlistMovie => wishlistMovie.Title !== movie.Title)
 
         wishlist = JSON.stringify(wishlist)
         Cookies.set('wishlist', wishlist)
